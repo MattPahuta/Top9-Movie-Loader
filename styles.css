@@ -1,4 +1,9 @@
 /* Base Styles */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
 #movies { 
     width: 800px;
     margin-left: auto;

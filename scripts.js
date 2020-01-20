@@ -39,6 +39,8 @@ function buildQueryString(baseUrl, genre, year){
 function afterDataLoaded(dataObject){
     // All images have this base URL
     var posterBaseUrl = "https://image.tmdb.org/t/p/w500"
+    // Add link to movie official page
+    var moviePageBaseUrl = "https://www.themoviedb.org/movie/"
   /* Loop over the results in the dataObject. 
     HINT: console log dataObject to find the name
     of the property that includes the array of results. 
@@ -49,5 +51,7 @@ function afterDataLoaded(dataObject){
   */
     for (var i=0; i<dataObject.results.length; i++){
         $('#movieImg' + i).attr('src', posterBaseUrl + dataObject.results[i].poster_path);
+        // Movie official Page
+        $('#moviePage' + i).attr('href', moviePageBaseUrl + dataObject.results[i].id);
     }
 }

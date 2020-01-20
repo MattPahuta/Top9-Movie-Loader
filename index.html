@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Top 9 Movie Loader</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -16,24 +17,25 @@
         Genre:
         <!-- Genre Source: https://developers.themoviedb.org/3/genres/get-movie-list -->
         <select id="genre">
-          <option value="28">Action</option>
-          <option value="12">Adventure</option>
-          <option value="16">Animation</option>
-          <option value="35">Comedy</option>
-          <option value="80">Crime</option>
-          <option value="99">Documentary</option>
-          <option value="18">Drama</option>
-          <option value="10751">Family</option>
-          <option value="14">Fantasy</option>
-          <option value="36">History</option>
-          <option value="27">Horror</option>
-          <option value="10402">Music</option>
+            <option value="28">Action</option>
+            <option value="12">Adventure</option>
+            <option value="16">Animation</option>
+            <option value="35">Comedy</option>
+            <option value="80">Crime</option>
+            <option value="99">Documentary</option>
+            <option value="18">Drama</option>
+            <option value="10751">Family</option>
+            <option value="14">Fantasy</option>
+            <option value="36">History</option>
+            <option value="27">Horror</option>
+            <option value="10402">Music</option>
         </select>
+        
         Year Released: <input type="text" id="year" />
         <button type="button">Go!</button>
-      </div>
+    </div>
 
-      <div id="movies">
+    <!-- <div id="movies">
         <img id="movieImg0" src="http://www.kevingage.com/assets/clapboard.png" />      
         <img id="movieImg1" src="http://www.kevingage.com/assets/clapboard.png" />
         <img id="movieImg2" src="http://www.kevingage.com/assets/clapboard.png" />
@@ -43,6 +45,19 @@
         <img id="movieImg6" src="http://www.kevingage.com/assets/clapboard.png" />
         <img id="movieImg7" src="http://www.kevingage.com/assets/clapboard.png" />
         <img id="movieImg8" src="http://www.kevingage.com/assets/clapboard.png" />
-      </div>
+    </div> -->
+
+    <!-- Hyperlinked Enhancement -->
+    <div id="movies">
+        <a id="moviePage0" href="" target="_blank"><img id="movieImg0" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+        <a id="moviePage1" href="" target="_blank"><img id="movieImg1" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+        <a id="moviePage2" href="" target="_blank"><img id="movieImg2" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+        <a id="moviePage3" href="" target="_blank"><img id="movieImg3" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+        <a id="moviePage4" href="" target="_blank"><img id="movieImg4" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+        <a id="moviePage5" href="" target="_blank"><img id="movieImg5" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+        <a id="moviePage6" href="" target="_blank"><img id="movieImg6" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+        <a id="moviePage7" href="" target="_blank"><img id="movieImg7" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+        <a id="moviePage8" href="" target="_blank"><img id="movieImg8" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+    </div>
 </body>
 </html>
