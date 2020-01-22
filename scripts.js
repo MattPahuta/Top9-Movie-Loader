@@ -1,4 +1,5 @@
 // Base scripts - Top 9 Movie Loader
+$(document).ready(function() {
 
 const apiKey = '5d576382955ff5829fc3844390db4427';
 const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc`;
@@ -8,6 +9,10 @@ $(function () {
     // Button ID = #goButton
     $('button').click(afterGoClicked);
 })
+
+// Expand functionality ****************************************************
+// * Add additional search criteria 
+// * Automatically update the movie list whenever the user changes a value, so you don't need to use the 'Search' button
 
 function afterGoClicked() {
   // Read the selected genre id from the select boxes and save it to a variable
@@ -55,3 +60,5 @@ function afterDataLoaded(dataObject){
         $('#moviePage' + i).attr('href', moviePageBaseUrl + dataObject.results[i].id);
     }
 }
+
+});

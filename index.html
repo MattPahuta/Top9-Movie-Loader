@@ -5,83 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Top 9 Movie Loader</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    <!-- google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-  <script src="scripts.js"></script>
-    
-    <div id="query" class="container">
-        Genre:
-        <!-- Genre Source: https://developers.themoviedb.org/3/genres/get-movie-list -->
-        <select id="genre">
-            <option value="28">Action</option>
-            <option value="12">Adventure</option>
-            <option value="16">Animation</option>
-            <option value="35">Comedy</option>
-            <option value="80">Crime</option>
-            <option value="99">Documentary</option>
-            <option value="18">Drama</option>
-            <option value="10751">Family</option>
-            <option value="14">Fantasy</option>
-            <option value="36">History</option>
-            <option value="27">Horror</option>
-            <option value="10402">Music</option>
-        </select>
-        
-        Year Released: <input type="text" id="year" />
-        <button type="button">Go!</button>
-    </div>
 
-    <!-- <div id="movies">
-        <img id="movieImg0" src="http://www.kevingage.com/assets/clapboard.png" />      
-        <img id="movieImg1" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg2" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg3" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg4" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg5" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg6" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg7" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg8" src="http://www.kevingage.com/assets/clapboard.png" />
-    </div> -->
-
-    <!-- Movie Grid & Results Section -->
-    <!-- Hyperlinked Enhancement -->
-    <div id="movies" class="container">
-
-        <div class="movie-grid">
-            <div class="movie">
-                <a id="moviePage0" href="" target="_blank"><img id="movieImg0" src="http://www.kevingage.com/assets/clapboard.png" /></a>
-            </div>
-            <div class="movie">
-                <a id="moviePage1" href="" target="_blank"><img id="movieImg1" src="http://www.kevingage.com/assets/clapboard.png" /></a>
-            </div>
-            <div class="movie">
-                <a id="moviePage2" href="" target="_blank"><img id="movieImg2" src="http://www.kevingage.com/assets/clapboard.png" /></a>
-            </div>
-            <div class="movie">
-                <a id="moviePage3" href="" target="_blank"><img id="movieImg3" src="http://www.kevingage.com/assets/clapboard.png" /></a>
-            </div>
-            <div class="movie">
-                <a id="moviePage4" href="" target="_blank"><img id="movieImg4" src="http://www.kevingage.com/assets/clapboard.png" /></a>
-            </div>
-            <div class="movie">
-                <a id="moviePage5" href="" target="_blank"><img id="movieImg5" src="http://www.kevingage.com/assets/clapboard.png" /></a>
-            </div>
-            <div class="movie">
-                <a id="moviePage6" href="" target="_blank"><img id="movieImg6" src="http://www.kevingage.com/assets/clapboard.png" /></a>
-            </div>
-            <div class="movie">
-                <a id="moviePage7" href="" target="_blank"><img id="movieImg7" src="http://www.kevingage.com/assets/clapboard.png" /></a>
-            </div>
-            <div class="movie">
-                <a id="moviePage8" href="" target="_blank"><img id="movieImg8" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+    <!-- Header and Nav Section -->
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-6 py-2">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-white">A Capstone project developed for the First Step Coding Bootcamp Prep Course. Developed with jQuery and styled with Bootstrap.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-2">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                            <li><a href="#" class="text-white">See me on LinkedIn</a></li>
+                            <li><a href="#" class="text-white">Email Me</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
-    </div>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center"><strong>Top 9 Movie Loader</strong></a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Jumbotron & Movie Search Form Section -->
+    <section id="querySection" class="jumbotron">
+        <div class="container">
+            <!-- Simple Form Version -->
+            <h1>Find a Movie!</h1>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="genre">Genre:</label>
+                        <!-- Genre Source: https://developers.themoviedb.org/3/genres/get-movie-list -->
+                        <select id="genre" class="form-control">
+                            <option value="28">Action</option>
+                            <option value="12">Adventure</option>
+                            <option value="16">Animation</option>
+                            <option value="35">Comedy</option>
+                            <option value="80">Crime</option>
+                            <option value="99">Documentary</option>
+                            <option value="18">Drama</option>
+                            <option value="10751">Family</option>
+                            <option value="14">Fantasy</option>
+                            <option value="36">History</option>
+                            <option value="27">Horror</option>
+                            <option value="10402">Music</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="year">Year Released: </label>
+                        <input type="text" id="year" class="form-control" placeholder="Year"/>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Search Movies!</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Movie Grid & Results Section -->
+    <section id="movies" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 my-2">
+                    <a id="moviePage0" href="" target="_blank"><img id="movieImg0" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage1" href="" target="_blank"><img id="movieImg1" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage2" href="" target="_blank"><img id="movieImg2" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage3" href="" target="_blank"><img id="movieImg3" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage4" href="" target="_blank"><img id="movieImg4" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage5" href="" target="_blank"><img id="movieImg5" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage6" href="" target="_blank"><img id="movieImg6" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage7" href="" target="_blank"><img id="movieImg7" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage8" href="" target="_blank"><img id="movieImg8" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-muted mt-5">
+        <div class="container">
+            <p class="float-right">
+                <a href="#" class="footer-link">Back to top</a>
+            </p>
+            <p>The Top 9 Movie Search | A First Step Coding Student Project</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- Custom scripts -->
+    <script src="scripts.js"></script>
 
 </body>
 </html>
