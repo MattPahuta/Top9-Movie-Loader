@@ -7,6 +7,7 @@
     <title>Top 9 Movie Loader</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="styles.css">
     <!-- google Fonts -->
@@ -22,7 +23,8 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-6 py-2">
                         <h4 class="text-white">About</h4>
-                        <p class="text-white">A Capstone project developed for the First Step Coding Bootcamp Prep Course. Developed with jQuery and styled with Bootstrap.</p>
+                        <p class="text-white">A Capstone project for the First Step Coding Bootcamp Prep Course. Developed with jQuery and styled with Bootstrap.</p>
+                        <p class="text-muted">This website was created for educational testing purposes only.</p>
                     </div>
                     <div class="col-sm-4 offset-md-1 py-2">
                         <h4 class="text-white">Contact</h4>
@@ -49,7 +51,6 @@
     <!-- Jumbotron & Movie Search Form Section -->
     <section id="querySection" class="jumbotron">
         <div class="container">
-            <!-- Simple Form Version -->
             <h1>Find a Movie!</h1>
             <form>
                 <div class="row">
@@ -84,14 +85,14 @@
                         <input type="text" id="year" class="form-control" placeholder="Year"/>
                     </div>
                 </div>
-                <button id="searchButton" type="submit" class="btn btn-primary mb-2">Search Movies!</button>
+                <button id="searchButton" type="button" class="btn btn-primary mb-2">Search Movies!</button>
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-6">
                         <h4 class="mt-3">Or, See What's Playing Now!</h4>
                         <button id="nowPlaying" type="submit" class="btn btn-primary mb-2 mt-2">Now Playing</button>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row">
                     <div class="col-md-6">
@@ -149,12 +150,13 @@
     </footer>
 
     <!-- Bootstrap JS and jQuery -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
       <!-- Custom scripts -->
     <script src="scripts.js"></script>
 

@@ -1,18 +1,16 @@
 // Base scripts - Top 9 Movie Loader
-$(document).ready(function() {
 
 const apiKey = '5d576382955ff5829fc3844390db4427';
 const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc`;
 
 $(function () {
     // After the DOM has loaded, call afterGoClicked after any time the button is clicked 
-    // Button ID = #goButton
     $('#searchButton').click(afterGoClicked);
-})
+});
 
 // Expand functionality ****************************************************
 // * Add additional search criteria 
-//    - Search by movie title
+//    - Search for what's playing now
 // * Automatically update the movie list whenever the user changes a value, so you don't need to use the 'Search' button
 
 function afterGoClicked() {
@@ -21,23 +19,15 @@ function afterGoClicked() {
   // Read the entered year from the text box and save it to a variable
   var year = $('#year').val();
   // Call buildQueryString to handle building a completeUrl and save it as a variable
-  // Original working query string builder *******************
   var completeUrl = buildQueryString(baseUrl, genre, year);
-
   // Load the JSON from the API with completeUrl, and then call the afterDataLoaded function
   console.log('completeUrl: ' + completeUrl)
   $.getJSON(completeUrl, afterDataLoaded); 
 }
 
-/* Combine the baseUrl, genre, and year together to create a complete url with the
-  right query parameters. Then return the url.
-  *** Check out examples query params at https://www.themoviedb.org/documentation/api/discover
-  HINT: you will need to use with_genres in your query string
-*/
-
 function buildQueryString(baseUrl, genre, year){
     var queryString = baseUrl + '&with_genres=' + genre + '&primary_release_year=' + year;
-    // console.log('queryString: ' + queryString)
+    console.log('queryString: ' + queryString)
     return queryString;
 }
 
@@ -47,24 +37,15 @@ function afterDataLoaded(dataObject){
     var posterBaseUrl = "https://image.tmdb.org/t/p/w500"
     // Add link to movie official page
     var moviePageBaseUrl = "https://www.themoviedb.org/movie/"
-  /* Loop over the results in the dataObject. 
-    HINT: console log dataObject to find the name
-    of the property that includes the array of results. 
 
-    For each result (inside your loop):
-    - Look up a corresponding img element (in order)
-    - Set the img element's src tag to posterBaseUrl + the poster_path from the result movie
-  */
     for (var i=0; i<dataObject.results.length; i++){
-        $('#movieImg' + i).attr('src', posterBaseUrl + dataObject.results[i].poster_path);
-        // Movie official Page
-        $('#moviePage' + i).attr('href', moviePageBaseUrl + dataObject.results[i].id);
+      console.log(dataObject.results[i])
+      $('#movieImg' + i).attr('src', posterBaseUrl + dataObject.results[i].poster_path);
+      $('#moviePage' + i).attr('href', moviePageBaseUrl + dataObject.results[i].id);
     }
 }
 
   // Reset sections button
   $('#resetButton').click(function() {
     location.reload(true);
-  }) 
-
-});
+  });
