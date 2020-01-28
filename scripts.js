@@ -8,6 +8,12 @@ $(function () {
     $('#searchButton').click(afterGoClicked);
 });
 
+// Now playing Search
+$(function () {
+  // After the DOM has loaded, call afterGoClicked after any time the button is clicked 
+  $('#nowPlaying').click(nowPlaying);
+});
+
 // Expand functionality ****************************************************
 // * Add additional search criteria 
 //    - Search for what's playing now
@@ -24,6 +30,14 @@ function afterGoClicked() {
   console.log('completeUrl: ' + completeUrl)
   $.getJSON(completeUrl, afterDataLoaded); 
 }
+
+// Search now playing
+function nowPlaying(){
+  // var nowPlayingUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1';
+  var nowPlayingUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=5d576382955ff5829fc3844390db4427&language=en-US&page=1&region=US';
+  $.getJSON(nowPlayingUrl, afterDataLoaded)
+}
+
 
 function buildQueryString(baseUrl, genre, year){
     var queryString = baseUrl + '&with_genres=' + genre + '&primary_release_year=' + year;
