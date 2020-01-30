@@ -5,44 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Top 9 Movie Loader</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    <!-- google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Oswald:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-  <script src="scripts.js"></script>
-    
-    <div id="query">
-        Genre:
-        <!-- Genre Source: https://developers.themoviedb.org/3/genres/get-movie-list -->
-        <select id="genre">
-          <option value="28">Action</option>
-          <option value="12">Adventure</option>
-          <option value="16">Animation</option>
-          <option value="35">Comedy</option>
-          <option value="80">Crime</option>
-          <option value="99">Documentary</option>
-          <option value="18">Drama</option>
-          <option value="10751">Family</option>
-          <option value="14">Fantasy</option>
-          <option value="36">History</option>
-          <option value="27">Horror</option>
-          <option value="10402">Music</option>
-        </select>
-        Year Released: <input type="text" id="year" />
-        <button type="button">Go!</button>
-      </div>
+    <!-- Header and Nav Section -->
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-6 py-2">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-white">A Capstone project for the <a class="text-white" href="https://firststepcoding.com" target="_blank">First Step Coding</a> Bootcamp Prep Course. Developed with jQuery and styled with Bootstrap.</p>
+                        <p class="text-muted">This website was created for educational testing purposes only.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-2">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="https://twitter.com/MattPahuta" class="text-white" target="_blank">Follow on Twitter</a></li>
+                            <li><a href="https://github.com/mattpahuta" class="text-white" target="_blank">See me on GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      <div id="movies">
-        <img id="movieImg0" src="http://www.kevingage.com/assets/clapboard.png" />      
-        <img id="movieImg1" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg2" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg3" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg4" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg5" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg6" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg7" src="http://www.kevingage.com/assets/clapboard.png" />
-        <img id="movieImg8" src="http://www.kevingage.com/assets/clapboard.png" />
-      </div>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center"><strong>Top 9 Movie Loader</strong></a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Jumbotron & Movie Search Form Section -->
+    <section id="querySection" class="jumbotron">
+        <div class="container">
+            <h1 class="text-white page-heading">Find a Movie!</h1>
+
+            <form>
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label class="text-white" for="genre">Pick a genre:</label>
+                        <!-- Genre Source: https://developers.themoviedb.org/3/genres/get-movie-list -->
+                        <select id="genre" class="form-control">
+                            <option value="">Choose a genre</option>
+                            <option value="28">Action</option>
+                            <option value="12">Adventure</option>
+                            <option value="16">Animation</option>
+                            <option value="35">Comedy</option>
+                            <option value="80">Crime</option>
+                            <option value="99">Documentary</option>
+                            <option value="18">Drama</option>
+                            <option value="10751">Family</option>
+                            <option value="14">Fantasy</option>
+                            <option value="36">History</option>
+                            <option value="27">Horror</option>
+                            <option value="10402">Music</option>
+                            <option value="9648">Mystery</option>
+                            <option value="10749">Romance</option>
+                            <option value="878">Science Fiction</option>
+                            <option value="10770">TV Movie</option>
+                            <option value="53">Thriller</option>
+                            <option value="10752">War</option>
+                            <option value="37">Western</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="text-white" for="year">Year Released:</label>
+                        <input type="text" id="year" class="form-control year-input" placeholder="Year"/>
+                    </div>
+                </div>
+                <button id="searchButton" type="button" class="btn btn-dark btn-lg mb-4">Search Movies!</button>
+            </form>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <button id="nowPlaying" type="button" class="btn btn-dark btn-block mt-6">Or, see what's Playing</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="resetButton" type="submit" class="btn btn-light btn-sm mt-3 float-right">Reset Search</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="credit-tag" style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@dmjdenise?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Denise Jans"><span style="padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="padding:2px 3px">Denise Jans</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Grid & Results Section -->
+    <section id="movies" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 my-2">
+                    <a id="moviePage0" href="" target="_blank"><img id="movieImg0" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage1" href="" target="_blank"><img id="movieImg1" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage2" href="" target="_blank"><img id="movieImg2" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage3" href="" target="_blank"><img id="movieImg3" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage4" href="" target="_blank"><img id="movieImg4" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage5" href="" target="_blank"><img id="movieImg5" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage6" href="" target="_blank"><img id="movieImg6" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage7" href="" target="_blank"><img id="movieImg7" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+                <div class="col-md-4 my-2">
+                    <a id="moviePage8" href="" target="_blank"><img id="movieImg8" class="img-fluid" src="http://www.kevingage.com/assets/clapboard.png" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-muted mt-5">
+        <div class="container">
+            <p class="float-right">
+                <a href="#" class="footer-link">Back to top</a>
+            </p>
+            <p>The Top 9 Movie Search | A First Step Coding Student Project</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- Custom scripts -->
+    <script src="scripts.js"></script>
 </body>
 </html>

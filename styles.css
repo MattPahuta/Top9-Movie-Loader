@@ -1,19 +1,39 @@
-/* Base Styles */
-#movies { 
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+/* Custom Styles */
+
+body {
+    /* Headings: Oswald, HelveticaNeue - Body: proxima_nova */
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(17, 17, 17);
 }
 
-#query {
-    text-align: center;
-    margin-bottom: 20px;
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Oswald', sans-serif;
 }
 
-img { 
-    width: 33%;
+.jumbotron {
+    /* background-image: url('felix-mooneeram-evlkOfkQ5rE-unsplash.jpg'); */
+    background-image: url('denise-jans-OaVJQZ-nFD0-unsplash.jpg');
+    background-size: cover;
+    height: 100%;
 }
 
-select, button, input { 
-    width: 100px;
+.page-heading {
+    font-size: 3.6rem;
 }
+
+.credit-tag {
+    margin-top: 2rem;
+}
+
+.footer-link {
+    color: inherit;
+}
+
+.footer-link:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
