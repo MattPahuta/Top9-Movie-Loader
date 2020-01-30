@@ -7,15 +7,12 @@
     <title>Top 9 Movie Loader</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="styles.css">
     <!-- google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Lato|Oswald:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <!-- Header and Nav Section -->
     <header>
         <div class="collapse bg-dark" id="navbarHeader">
@@ -23,15 +20,14 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-6 py-2">
                         <h4 class="text-white">About</h4>
-                        <p class="text-white">A Capstone project for the First Step Coding Bootcamp Prep Course. Developed with jQuery and styled with Bootstrap.</p>
+                        <p class="text-white">A Capstone project for the <a class="text-white" href="https://firststepcoding.com" target="_blank">First Step Coding</a> Bootcamp Prep Course. Developed with jQuery and styled with Bootstrap.</p>
                         <p class="text-muted">This website was created for educational testing purposes only.</p>
                     </div>
                     <div class="col-sm-4 offset-md-1 py-2">
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                            <li><a href="#" class="text-white">See me on LinkedIn</a></li>
-                            <li><a href="#" class="text-white">Email Me</a></li>
+                            <li><a href="https://twitter.com/MattPahuta" class="text-white" target="_blank">Follow on Twitter</a></li>
+                            <li><a href="https://github.com/mattpahuta" class="text-white" target="_blank">See me on GitHub</a></li>
                         </ul>
                     </div>
                 </div>
@@ -51,12 +47,12 @@
     <!-- Jumbotron & Movie Search Form Section -->
     <section id="querySection" class="jumbotron">
         <div class="container">
-            <h1>Find a Movie!</h1>
-            <form>
+            <h1 class="text-white page-heading">Find a Movie!</h1>
 
+            <form>
                 <div class="row">
                     <div class="form-group col-md-3">
-                        <label for="genre">Genre:</label>
+                        <label class="text-white" for="genre">Pick a genre:</label>
                         <!-- Genre Source: https://developers.themoviedb.org/3/genres/get-movie-list -->
                         <select id="genre" class="form-control">
                             <option value="">Choose a genre</option>
@@ -82,30 +78,27 @@
                         </select>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="year">Year Released:</label>
-                        <input type="text" id="year" class="form-control" placeholder="Year"/>
+                        <label class="text-white" for="year">Year Released:</label>
+                        <input type="text" id="year" class="form-control year-input" placeholder="Year"/>
                     </div>
                 </div>
-                <button id="searchButton" type="button" class="btn btn-primary mb-2">Search Movies!</button>
+                <button id="searchButton" type="button" class="btn btn-dark btn-lg mb-4">Search Movies!</button>
             </form>
 
             <div class="row">
                 <div class="col-md-6">
-                    <button id="resetButton" type="submit" class="btn btn-secondary mt-2 float-right">Reset Search</button>
+                    <button id="nowPlaying" type="button" class="btn btn-dark btn-block mt-6">Or, see what's Playing</button>
                 </div>
                 <div class="col-md-6">
-                    <button id="nowPlaying" type="button" class="btn btn-primary mt-2 float-right">Or, see what's Playing</button>
+                    <button id="resetButton" type="submit" class="btn btn-light btn-sm mt-3 float-right">Reset Search</button>
                 </div>
             </div>
-
-            <!-- <form>
-                <div class="form-group col-md-6">
-                    <h4 class="mt-3">Or, See What's Playing Now!</h4>
-                    <button id="nowPlaying" type="button" class="btn btn-primary mb-2 mt-2">Now Playing</button>
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="credit-tag" style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@dmjdenise?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Denise Jans"><span style="padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="padding:2px 3px">Denise Jans</span>
+                    </a>
                 </div>
-            </form> -->
-
-
+            </div>
         </div>
     </section>
 
@@ -157,13 +150,9 @@
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
       <!-- Custom scripts -->
     <script src="scripts.js"></script>
-
 </body>
 </html>

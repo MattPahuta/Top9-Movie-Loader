@@ -15,9 +15,17 @@ $(function () {
 });
 
 // Expand functionality ****************************************************
-// * Add additional search criteria 
-//    - Search for what's playing now
 // * Automatically update the movie list whenever the user changes a value, so you don't need to use the 'Search' button
+
+$('select').change(function() {
+  console.log('new selction made!');
+  afterGoClicked()
+})
+
+$('.year-input').change(function() {
+  console.log('new selction made!');
+  afterGoClicked()
+})
 
 function afterGoClicked() {
   // Read the selected genre id from the select boxes and save it to a variable
